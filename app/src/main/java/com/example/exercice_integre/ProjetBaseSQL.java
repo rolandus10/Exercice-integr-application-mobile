@@ -7,13 +7,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class ProjetBaseSQL extends SQLiteOpenHelper {
 
-    private static final String TABLE_PROJET = "Projet Application Mobile";
+    private static final String TABLE_PROJET = "Projet_Application_Mobile";
     private static final String COL_ID = "ID";
     private static final String COL_ACTION = "ACTIONS";
     private static final String COL_DATE = "DATE";
     private static final String COL_DUREE = "DUREE";
 
-    private static final String CREATE_BDD = "CREATE TABLE " + TABLE_PROJET + " (" +
+    private static final String CREATE_BDD = "CREATE TABLE " + TABLE_PROJET + "(" +
             COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_ACTION + " TEXT NOT NULL,"+
             COL_DATE  + " TEXT NOT NULL," + COL_DUREE + " INTEGER NOT NULL);";
 

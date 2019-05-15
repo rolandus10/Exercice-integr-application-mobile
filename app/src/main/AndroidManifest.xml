@@ -4,6 +4,8 @@
     package="com.example.exercice_integre">
 
     <dist:module dist:instant="true" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ActionViewActivity"></activity>
+        <activity android:name=".DeleteActivity"></activity>
+        <activity android:name=".UpdateActivity"></activity>
     </application>
 
 </manifest>

@@ -13,10 +13,10 @@ public class ProjetBDD {
     private static final int VERSION = 1;
     private static final String NOM_BDD = "projet.db";
 
-    private static final String TABLE_PROJET = "Projet Application Mobile";
+    private static final String TABLE_PROJET = "Projet_Application_Mobile";
     private static final String COL_ID = "ID";
     private static final int NUM_COL_ID = 0;
-    private static final String COL_ACTION = "ACTION";
+    private static final String COL_ACTION = "ACTIONS";
     private static final int NUM_COL_ACTION = 1;
     private static final String COL_DATE = "DATE";
     private static final int NUM_COL_DATE = 2;
@@ -57,7 +57,7 @@ public class ProjetBDD {
         return bdd.insert(TABLE_PROJET, null, content);
     }
 
-    public int updateLivre(int id, Projet projet) {
+    public int updateProject(int id, Projet projet) {
         ContentValues content = new ContentValues();
         content.put(COL_ACTION, projet.getAction());
         content.put(COL_DATE, projet.getDate());
@@ -67,11 +67,11 @@ public class ProjetBDD {
         return bdd.update(TABLE_PROJET, content, COL_ID + " = " + id, null);
     }
 
-    public int removeLivre(String name) {
+    public int removeProject(String name) {
         return bdd.delete(TABLE_PROJET, COL_ACTION + " = " + name, null);
     }
 
-    public Projet getLivre(String name) {
+    public Projet getProject(String name) {
         Cursor c = bdd.query(TABLE_PROJET, new String[] { COL_ID, COL_ACTION,
                         COL_DATE, COL_DUREE}, COL_ACTION + " LIKE \"" + name + "\"", null, null,
                 null, COL_ACTION);
