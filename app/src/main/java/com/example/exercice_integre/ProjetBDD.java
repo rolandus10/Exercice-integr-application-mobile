@@ -95,7 +95,7 @@ public class ProjetBDD {
 
     public ArrayList<Projet> getAllproject() {
         Cursor c = bdd.query(TABLE_PROJET, new String[] { COL_ID, COL_ACTION,
-                COL_DATE}, null, null, null, null, COL_ACTION);
+                COL_DATE,COL_DUREE}, null, null, null, null, COL_ACTION);
         if (c.getCount() == 0) {
             c.close();
             return null;

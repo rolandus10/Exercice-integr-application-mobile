@@ -47,4 +47,12 @@ public class Projet {
     public void setAction(String action) {
         this.action = action;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(id+" "+"Action:" + action + "{" + "Date=" + date+" ").append(
+                "Durée="+ duree + "}\n");
+        return sb.toString();
+    }
 }

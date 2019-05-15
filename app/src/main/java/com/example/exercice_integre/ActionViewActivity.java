@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 
 
 public class ActionViewActivity extends AppCompatActivity {
@@ -19,7 +20,21 @@ public class ActionViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.action_view);
 
+        final ProjetBDD actionBDD = new ProjetBDD(this);
+
+        EditText display = findViewById(R.id.display);
+
         Button backButton = findViewById(R.id.backButton);
+
+
+        actionBDD.openForRead();
+        ArrayList<Projet> projectList = actionBDD.getAllproject();
+
+
+        display.setText(projectList.toString());
+
+
+
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
