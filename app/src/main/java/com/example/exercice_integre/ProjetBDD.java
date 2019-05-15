@@ -67,8 +67,8 @@ public class ProjetBDD {
         return bdd.update(TABLE_PROJET, content, COL_ID + " = " + id, null);
     }
 
-    public int removeProject(String name) {
-        return bdd.delete(TABLE_PROJET, COL_ACTION + " = " + name, null);
+    public int removeProject(int id) {
+        return bdd.delete(TABLE_PROJET, COL_ID + " = " + id, null);
     }
 
     public Projet getProject(String name) {
@@ -77,6 +77,8 @@ public class ProjetBDD {
                 null, COL_ACTION);
         return cursorToProject(c);
     }
+
+
 
     public Projet cursorToProject(Cursor c) {
         if (c.getCount() == 0) {
@@ -112,6 +114,22 @@ public class ProjetBDD {
         }
         c.close();
         return projetList;
+    }
+
+    public String sum() {
+        Cursor c = bdd.query(TABLE_PROJET, new String[] { COL_ID, COL_ACTION,
+                COL_DATE,COL_DUREE}, null, null, null, null, COL_ACTION);
+        if (c.getCount() == 0) {
+            c.close();
+            return null;
+        }
+        Integer sum = 0;
+        while (c.moveToNext()) {
+
+            sum= sum +c.getInt(NUM_COL_DUREE);
+        }
+        c.close();
+        return "total des heures = "+ sum;
     }
 
 }

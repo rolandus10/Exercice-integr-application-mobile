@@ -23,6 +23,7 @@ public class ActionViewActivity extends AppCompatActivity {
         final ProjetBDD actionBDD = new ProjetBDD(this);
 
         EditText display = findViewById(R.id.display);
+        EditText sumDisplay = findViewById(R.id.sumDisplay);
 
         Button backButton = findViewById(R.id.backButton);
 
@@ -32,6 +33,7 @@ public class ActionViewActivity extends AppCompatActivity {
 
 
         display.setText(projectList.toString());
+        sumDisplay.setText(actionBDD.sum());
 
 
 

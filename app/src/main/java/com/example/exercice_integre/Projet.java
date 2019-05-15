@@ -51,8 +51,8 @@ public class Projet {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(id+" "+"Action:" + action + "{" + "Date=" + date+" ").append(
-                "Durée="+ duree + "}\n");
+        sb.append(" ID: "+ id +" "+"[ Action:" + action + " - " + "Date:" + date+" - ").append(
+                "Durée:"+ duree + "]\n\n");
         return sb.toString();
     }
 }

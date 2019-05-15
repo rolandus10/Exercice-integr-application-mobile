@@ -41,12 +41,12 @@ public class DeleteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-             String  action = action_delete.getText().toString();
+             int  action_id = Integer.valueOf(action_delete.getText().toString());
 
              Log.d(" texte", action_delete.getText().toString());
 
              actionBDD.openForWrite();
-             actionBDD.removeProject(action);
+             actionBDD.removeProject(action_id);
              actionBDD.close();
 
              action_delete.setText("");
